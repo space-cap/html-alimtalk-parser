@@ -44,7 +44,7 @@ conn = pymysql.connect(
 
 
 create_table_sql = """
-CREATE TABLE IF NOT EXISTS other_service_approved_templates (
+CREATE TABLE IF NOT EXISTS jober_other_service_approved_template (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   text_content TEXT NOT NULL,
   category_1 VARCHAR(100) NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS other_service_approved_templates (
 """
 
 insert_sql = """
-INSERT INTO other_service_approved_templates
+INSERT INTO jober_other_service_approved_template
 (text_content, category_1, category_2, keywords, template_code, auto_title, src_sheet)
 VALUES (%s,%s,%s,%s,%s,%s,%s)
 ON DUPLICATE KEY UPDATE

@@ -51,7 +51,7 @@ conn = pymysql.connect(
 )
 
 create_table_sql = """
-CREATE TABLE IF NOT EXISTS frequently_used_template (
+CREATE TABLE IF NOT EXISTS jober_frequently_used_template (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   text_content TEXT NOT NULL,
   category_1 VARCHAR(100) NULL,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS frequently_used_template (
 """
 
 insert_sql = """
-INSERT INTO frequently_used_template
+INSERT INTO jober_frequently_used_template
 (text_content, category_1, category_2, auto_title, template_code, button_label, public_private, src_sheet)
 VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
 ON DUPLICATE KEY UPDATE

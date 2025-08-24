@@ -52,7 +52,7 @@ conn = pymysql.connect(
 
 # 5) 테이블이 없으면 생성 (DDL 실행)
 create_table_sql = """
-CREATE TABLE IF NOT EXISTS rejected_templates (
+CREATE TABLE IF NOT EXISTS jober_rejected_template (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   text_content TEXT NOT NULL,
   category_1 VARCHAR(100) NULL,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS rejected_templates (
 """
 
 insert_sql = """
-INSERT INTO rejected_templates
+INSERT INTO jober_rejected_template
 (text_content, category_1, category_2, auto_title, reject_reason, reject_reason_summary, has_image, template_code, src_sheet)
 VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);
 """
